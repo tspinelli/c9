@@ -18,3 +18,5 @@
     $db['default']['stricton'] = FALSE;
 4. Started MySQL - mysql-ctl start
 5. Navigate to: https://c9-c9-tspinelli.c9.io/home/db_schema/create
+6. c9/application/third_party/Doctrine/DBAL/Driver/PDOMySql/Driver.php
+        private function _constructPdoDsn(array $params)

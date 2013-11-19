@@ -39,6 +39,7 @@ class Driver implements \Doctrine\DBAL\Driver
      */
     public function connect(array $params, $username = null, $password = null, array $driverOptions = array())
     {
+        // echo 'port:'.$params['port'];
         $conn = new \Doctrine\DBAL\Driver\PDOConnection(
             $this->_constructPdoDsn($params),
             $username,
@@ -57,14 +58,20 @@ class Driver implements \Doctrine\DBAL\Driver
     {
         $dsn = 'mysql:';
         if (isset($params['host']) && $params['host'] != '') {
-            $dsn .= 'host=' . $params['host'] . ';';
+            $dsn .= 'host=' . 'localhost' . ';';
+            // $dsn .= 'host=' . $params['host'] . ';';
         }
+        
+        // print_r($params);
+
         if (isset($params['port'])) {
             $dsn .= 'port=' . $params['port'] . ';';
         }
+
         if (isset($params['dbname'])) {
             $dsn .= 'dbname=' . $params['dbname'] . ';';
         }
+        $dsn .= 'unix_socket=' . '/var/lib/stickshift/528abc3c500446017100008d/app-root/data/lib/mysql/socket/mysql.sock' . ';';
         if (isset($params['unix_socket'])) {
             $dsn .= 'unix_socket=' . $params['unix_socket'] . ';';
         }

@@ -91,29 +91,19 @@ class Home extends MY_Controller
     {
         try
         {
-            echo "1";
             $this->em = $this->doctrine->em;
-            echo "2";
 
             $tool = new \Doctrine\ORM\Tools\SchemaTool($this->em);
-            echo "3";
 
             $cmf = new \Doctrine\ORM\Tools\DisconnectedClassMetadataFactory();
-            echo "4";
             $cmf->setEntityManager($this->em);
-            echo "5";
             $metadata = $cmf->getAllMetadata();
-            echo "6";
 
             if($mode == "create"){
-            echo "7";
                 $queries = $tool->getCreateSchemaSql($metadata);
-            echo "8";
             }
             else{
-            echo "9";
                 $queries = $tool->getUpdateSchemaSql($metadata);
-            echo "10";
             }
             echo "Total queries: ".count($queries)."<br /><br />";
             for($i=0; $i<count($queries);$i++){
