@@ -61,8 +61,6 @@ class Driver implements \Doctrine\DBAL\Driver
             $dsn .= 'host=' . 'localhost' . ';';
             // $dsn .= 'host=' . $params['host'] . ';';
         }
-        
-        // print_r($params);
 
         if (isset($params['port'])) {
             $dsn .= 'port=' . $params['port'] . ';';

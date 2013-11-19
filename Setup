@@ -19,4 +19,9 @@
 4. Started MySQL - mysql-ctl start
 5. Navigate to: https://c9-c9-tspinelli.c9.io/home/db_schema/create
 6. c9/application/third_party/Doctrine/DBAL/Driver/PDOMySql/Driver.php
-        private function _constructPdoDsn(array $params)
+            // changed $dsn .= 'host=' . $params['host'] . ';';
+            $dsn .= 'host=' . 'localhost' . ';';
+            ...
+            // added
+            $dsn .= 'unix_socket=' . '/var/lib/stickshift/528abc3c500446017100008d/app-root/data/lib/mysql/socket/mysql.sock' . ';';
+7. Modified GIT setup per https://github.com/DouglasCAyers/Cloud9-FAQ/tree/master
