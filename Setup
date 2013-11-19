@@ -1,0 +1,20 @@
+1. Cloned my github repo
+2. Installed code ignitor plus (https://github.com/ranacseruet/codeigniterplus)
+3. Setup database
+    $db['default']['hostname'] = 'localhost:/var/lib/stickshift/528abc3c500446017100008d/app-root/data/lib/mysql/socket/mysql.sock';
+    $db['default']['username'] = 'tspinelli';
+    $db['default']['password'] = '';
+    $db['default']['database'] = 'c9';
+    $db['default']['dbdriver'] = 'mysql';
+    $db['default']['dbprefix'] = '';
+    $db['default']['pconnect'] = TRUE;
+    $db['default']['db_debug'] = TRUE;
+    $db['default']['cache_on'] = FALSE;
+    $db['default']['cachedir'] = '';
+    $db['default']['char_set'] = 'utf8';
+    $db['default']['dbcollat'] = 'utf8_general_ci';
+    $db['default']['swap_pre'] = '';
+    $db['default']['autoinit'] = TRUE;
+    $db['default']['stricton'] = FALSE;
+4. Started MySQL - mysql-ctl start
+5. Navigate to: https://c9-c9-tspinelli.c9.io/home/db_schema/create
